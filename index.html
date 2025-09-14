@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COVID-19 Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Chart.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <header>
+        <h1>COVID-19 Tracker Dashboard</h1>
+    </header>
+
+    <main>
+        <section class="global-stats">
+            <h2>Global Statistics</h2>
+            <div class="cards-container">
+                <div class="stat-card confirmed">
+                    <h3>Total Confirmed</h3>
+                    <p id="global-confirmed">Loading...</p>
+                </div>
+                <div class="stat-card active">
+                    <h3>Active Cases</h3>
+                    <p id="global-active">Loading...</p>
+                </div>
+                <div class="stat-card recovered">
+                    <h3>Total Recovered</h3>
+                    <p id="global-recovered">Loading...</p>
+                </div>
+                <div class="stat-card deaths">
+                    <h3>Total Deaths</h3>
+                    <p id="global-deaths">Loading...</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="country-data">
+            <h2>Country Specific Data</h2>
+            <div class="country-selector">
+                <label for="country-select">Choose a Country:</label>
+                <select id="country-select">
+                    <option value="global">Global</option>
+                    <!-- Options will be populated by JavaScript -->
+                </select>
+            </div>
+            <div id="country-stats" class="cards-container">
+                <!-- Country stats will be populated by JavaScript -->
+            </div>
+        </section>
+
+        <section class="charts">
+            <h2>Historical Data (Last 30 Days)</h2>
+            <canvas id="historicalChart"></canvas>
+        </section>
+    </main>
+
+    <footer>
+        <p>Data sourced from <a href="https://disease.sh/" target="_blank">disease.sh</a></p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
